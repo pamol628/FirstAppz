@@ -1,24 +1,45 @@
- import { Component, OnInit, Output, EventEmitter} from '@angular/core';
-//import { Component, OnInit } from '@angular/core';
+//  import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+
+
+// @Component({
+//   selector: 'app-button',
+//   templateUrl: './button.component.html',
+//   styleUrls: ['./button.component.css']
+// })
+// export class ButtonComponent implements OnInit {
+
+// // @Input() text: string;
+// // @Input() color: string;
+// @Output () btnClick = new EventEmitter()
+//   constructor() { }
+
+//   ngOnInit(): void {
+//   }
+//   onClick ()
+//   {
+//     // console.log('add');
+//     this.btnClick.emit();
+//   }
+
+// }
+
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+  styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent implements OnInit {
+  @Input() text!: string;
+  @Input() color!: string;
+  @Output() btnClick = new EventEmitter();
 
-// @Input() text: string;
-// @Input() color: string;
-@Output () btnClick = new EventEmitter()
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-  onClick ()
-  {
-    // console.log('add');
+  ngOnInit(): void {}
+
+  onClick() {
     this.btnClick.emit();
   }
-
 }
